@@ -40,7 +40,7 @@ def addRequestObject(data, origin, destination, travelMode):
 def getCrimeScore(routes):
     scores = []
 
-    data = pd.read_csv("//path to csv")
+    data = pd.read_csv("/Users/moy/Downloads/vic_sex_polygon (2).csv")
     
     for route in routes:
         count = 0
@@ -62,7 +62,7 @@ def get_directions(request):
     origin = request.GET.get('origin')
     destination = request.GET.get('destination')
     travelMode = request.GET.get('travelMode')
-    api_key = '//Maps API Key'
+    api_key = 'AIzaSyAlJ7mi2t-1gdT31UT23ReN53HBzOZ5Ck4'
 
     if not origin or not destination:
         return JsonResponse({'error': 'Missing parameters'}, status=400)
