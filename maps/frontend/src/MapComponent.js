@@ -66,7 +66,7 @@ function MapComponent({ directions, scores }) {
   }, [directions, selectedRouteIndex]);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAlJ7mi2t-1gdT31UT23ReN53HBzOZ5Ck4" onLoad={() => setMapLoaded(true)}>
+    <LoadScript googleMapsApiKey="//Your API Key" onLoad={() => setMapLoaded(true)}>
       <GoogleMap
         mapContainerStyle={{ width: '100%', height: '500px' }}
         center={{ lat: -3.745, lng: -38.523 }}
