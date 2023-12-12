@@ -66,7 +66,7 @@ function MapComponent({ directions, scores }) {
   }, [directions, selectedRouteIndex]);
 
   return (
-    <LoadScript googleMapsApiKey="//Your API Key" onLoad={() => setMapLoaded(true)}>
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GMAPS_API_KEY} onLoad={() => setMapLoaded(true)}>
       <GoogleMap
         mapContainerStyle={{ width: '100%', height: '500px' }}
         center={{ lat: -3.745, lng: -38.523 }}

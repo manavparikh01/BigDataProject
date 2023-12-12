@@ -7,6 +7,7 @@ import pandas as pd
 
 import googlemaps
 from datetime import datetime
+from django.conf import settings
 
 def process_routes(routes):
     for route in routes:
@@ -40,7 +41,7 @@ def addRequestObject(data, origin, destination, travelMode):
 def getCrimeScore(routes):
     scores = []
 
-    data = pd.read_csv("//Your csv")
+    data = pd.read_csv(settings.CSV_PATH)
     
     for route in routes:
         count = 0
@@ -62,7 +63,7 @@ def get_directions(request):
     origin = request.GET.get('origin')
     destination = request.GET.get('destination')
     travelMode = request.GET.get('travelMode')
-    api_key = '/Your Maps API Key'
+    api_key = settings.GMAPS_API_KEY
 
     if not origin or not destination:
         return JsonResponse({'error': 'Missing parameters'}, status=400)

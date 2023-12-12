@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env(env_file='./.env')
+
+GMAPS_API_KEY = env.str("GMAPS_API_KEY")
+CSV_PATH = env.str("CSV_PATH")
+SECRET_KEY = env.str("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
