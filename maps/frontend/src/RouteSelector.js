@@ -4,7 +4,7 @@ function RouteSelector({ routes, onRouteSelect, scores }) {
     return (
       <div>
         {routes.map((route, index) => (
-          <div>
+          <div key={index}>
             <button key={index} onClick={() => onRouteSelect(index)}>
               Route {index + 1}
             </button>
